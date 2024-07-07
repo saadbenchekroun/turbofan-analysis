@@ -1,5 +1,5 @@
 # turbofan-analysis
-Plateforme en ligne d'analyse des données des capteurs des turboréacteurs à double flux
+Platform for analyzing turbojet sensor data.
 
 ### Project Setup and Initial Planning
 1. **Project Setup**:
