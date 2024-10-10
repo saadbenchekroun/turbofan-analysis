@@ -1,67 +1,71 @@
-# turbofan-analysis
-Platform for analyzing turbojet sensor data.
+Platform for Analysis, Visualization, and Processing of Turbofan Engine Data
 
-### Project Setup and Initial Planning
-1. **Project Setup**:
-   - Set up version control using Git.
-   - Set up the development environment (Node.js, React, PHP server, etc.).
-2. **Initial Planning**:
-   - Outline the project structure and components.
-   - Break down each major feature into smaller tasks.
+#Overview#
 
-### Backend Development
-3. **Database Setup**:
-   - Design the database schema for storing sensor data and analysis results.
-   - Set up the database (MongoDB).
-4. **Backend APIs**:
-   - Develop APIs for data ingestion, processing, and retrieval using PHP.
-   - Implement endpoints for uploading CSV files, fetching analysis results, etc.
+This repository contains the codebase for a highly specialized platform designed for analyzing, visualizing, and processing data from turbofan engines. The data utilized in this project is sourced from NASA’s Turbofan Engine Degradation Simulation Dataset (CMAPSS). The platform provides insights into key engine performance metrics, predictions for remaining useful life (RUL), and leverages machine learning models to support predictive maintenance and operational efficiency.
 
-### Frontend Development
-5. **Setup React and MUI**:
-   - Initialize the React project.
-   - Set up routing and basic navigation.
-6. **Develop Core Components**:
-   - Create reusable components for the dashboard, graphs, and reports.
-   - Integrate MUI components for a consistent UI.
-7. **Data Visualization**:
-   - Integrate charting libraries for data visualization.
-   - Develop components for displaying fuel efficiency graphs, performance curves, etc.
+#Key Features#
 
-### Analysis and Algorithms
-8. **Fuel Efficiency and Thrust Performance Analysis**:
-   - Implement algorithms for fuel efficiency analysis and thrust calculation.
-   - Develop backend logic for comparing with expected metrics.
-9. **Predictive Maintenance**:
-   - Implement FFT for vibration analysis and ML models for RUL prediction.
-   - Develop backend logic for lubrication system monitoring and alerts.
+##Data Visualization and Insights:## Advanced visualizations and real-time dashboards for engine sensor data, including metrics like engine pressure ratio (EPR), fuel flow ratio, and more.
 
-### Health Monitoring and Efficiency Optimization
-10. **Health Monitoring**:
-   - Implement continuous health monitoring logic.
-   - Develop backend logic for anomaly detection and out-of-threshold alerts.
-11. **Efficiency Optimization**:
-   - Implement analysis for fuel consumption optimization and operating conditions.
-   - Develop backend logic for flight operations adjustments.
+##KPI Calculation:## Node.js backend for real-time computation of Key Performance Indicators (KPI) such as engine reliability, availability, and overall health.
 
-### Safety Insights
-12. **Critical Condition Detection**:
-   - Implement logic for detecting critical conditions preceding failures.
-   - Develop backend logic for actionable safety insights and incident analysis.
+##Machine Learning Integration:## The platform integrates an LSTM (Long Short-Term Memory) model to predict the remaining useful life (RUL) of turbofan engines based on the NASA dataset.
 
-### Testing and Debugging
-13. **Testing**:
-   - Write unit tests for both frontend and backend components.
-   - Perform integration testing to ensure all components work together seamlessly.
-14. **Debugging**:
-   - Fix any bugs or issues identified during testing.
-   - Ensure the application is stable and performs well.
+##Vectorized Data Management:## Uses SingleStore as a scalable vector database for efficient embedding storage and retrieval, optimizing search queries on large sensor datasets.
 
-### Final Review and Deployment
-15. **Final Review**:
-   - Review the entire application for completeness and correctness.
-   - Ensure all features are implemented and working as expected.
-16. **Deployment**:
-   - Set up the production environment.
-   - Deploy the application.
-   - Perform final testing in the production environment.
+##Google Cloud Platform (GCP):## Utilizes Vertex AI API for enhanced data processing and enrichment, providing additional context to the raw sensor data for deeper insights.
+
+##Natural Language Data Analysis:## Integration with OpenAI’s API allows advanced querying of sensor data for natural language-driven insights, such as anomaly detection or sensor failure predictions.
+
+
+#Tech Stack#
+
+##Frontend:## Developed using React.js, ensuring a dynamic and interactive user interface with a focus on real-time data visualization and performance.
+
+##Backend:##
+
+###Node.js:### Manages the calculation of KPI metrics and serves data to the frontend.
+
+###Flask:### Powers the machine learning workflows, including data preprocessing and the LSTM model for predictive analytics.
+
+
+###Database:### SingleStore serves as the primary storage for sensor data embeddings, enabling efficient queries for real-time analysis.
+
+##Machine Learning:##
+
+###LSTM Model:### Used for time-series predictions, particularly for estimating engine remaining useful life (RUL).
+
+###Vertex AI (GCP):### Facilitates data enrichment and ML model deployment.
+
+
+##APIs:##
+
+OpenAI API: Provides advanced, natural language-based data analysis capabilities.
+
+
+
+
+
+#Usage#
+
+##Data Upload:## Users can upload new sensor data via the frontend. The data is then processed and embedded in the vector database.
+
+##KPI Monitoring:## The platform automatically calculates and displays real-time KPIs for engine performance, reliability, and health.
+
+##Predictive Maintenance:## The LSTM model analyzes sensor data to predict the remaining useful life of the engines.
+
+##Natural Language Insights:## Query sensor data through a chatbot interface that leverages the OpenAI API for dynamic analysis and predictive insights.
+
+
+#Data#
+
+The data used in this project comes from NASA’s Commercial Modular Aero-Propulsion System Simulation (CMAPSS) dataset. This dataset simulates degradation in turbofan engines and provides valuable insights for predictive maintenance.
+
+#Contributions#
+
+We welcome contributions! Please open an issue or submit a pull request if you'd like to help improve the platform.
+
+#License#
+
+This project is licensed under the MIT License.
